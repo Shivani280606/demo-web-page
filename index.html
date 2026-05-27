@@ -1,19 +1,55 @@
-export default function Home() {
-  return (
-    <main className="min-h-screen flex items-center justify-center bg-black text-white">
-      <div className="text-center">
-        <h1 className="text-5xl font-bold mb-4">
-          Hello Vercel ✨
-        </h1>
+"use client"
 
-        <p className="text-zinc-400 mb-6">
-          Your creative Next.js app starts here.
+import { motion } from "framer-motion"
+
+export default function Hero() {
+  return (
+    <main className="min-h-screen bg-black text-white flex items-center justify-center overflow-hidden relative">
+      
+      {/* Glow Background */}
+      <div className="absolute w-[500px] h-[500px] bg-purple-500/30 blur-3xl rounded-full top-[-100px] left-[-100px]" />
+      <div className="absolute w-[400px] h-[400px] bg-cyan-500/20 blur-3xl rounded-full bottom-[-100px] right-[-100px]" />
+
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        className="z-10 text-center"
+      >
+        <motion.h1
+          className="text-7xl font-black tracking-tight"
+          animate={{
+            backgroundPosition: ["0%", "100%"],
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            repeatType: "reverse",
+          }}
+          style={{
+            backgroundImage:
+              "linear-gradient(90deg,#fff,#8b5cf6,#06b6d4,#fff)",
+            backgroundSize: "300%",
+            WebkitBackgroundClip: "text",
+            color: "transparent",
+          }}
+        >
+          FUTURE UI
+        </motion.h1>
+
+        <p className="mt-6 text-zinc-400 text-lg max-w-xl mx-auto">
+          A cinematic Vercel-style landing page with motion, gradients,
+          blur effects, and smooth interactions.
         </p>
 
-        <button className="px-6 py-3 bg-white text-black rounded-xl hover:scale-105 transition">
-          Launch
-        </button>
-      </div>
+        <motion.button
+          whileHover={{ scale: 1.08 }}
+          whileTap={{ scale: 0.95 }}
+          className="mt-10 px-8 py-4 rounded-2xl bg-white text-black font-semibold shadow-2xl"
+        >
+          Enter Experience
+        </motion.button>
+      </motion.div>
     </main>
   )
 }
