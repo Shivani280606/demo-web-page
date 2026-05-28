@@ -1,55 +1,102 @@
-"use client"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Landing Page</title>
 
-import { motion } from "framer-motion"
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      color: #333;
+    }
 
-export default function Hero() {
-  return (
-    <main className="min-h-screen bg-black text-white flex items-center justify-center overflow-hidden relative">
-      
-      {/* Glow Background */}
-      <div className="absolute w-[500px] h-[500px] bg-purple-500/30 blur-3xl rounded-full top-[-100px] left-[-100px]" />
-      <div className="absolute w-[400px] h-[400px] bg-cyan-500/20 blur-3xl rounded-full bottom-[-100px] right-[-100px]" />
+    .hero {
+      height: 100vh;
+      background: linear-gradient(to right, #4facfe, #00f2fe);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 20px;
+    }
 
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        className="z-10 text-center"
-      >
-        <motion.h1
-          className="text-7xl font-black tracking-tight"
-          animate={{
-            backgroundPosition: ["0%", "100%"],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            repeatType: "reverse",
-          }}
-          style={{
-            backgroundImage:
-              "linear-gradient(90deg,#fff,#8b5cf6,#06b6d4,#fff)",
-            backgroundSize: "300%",
-            WebkitBackgroundClip: "text",
-            color: "transparent",
-          }}
-        >
-          FUTURE UI
-        </motion.h1>
+    .hero-content h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
 
-        <p className="mt-6 text-zinc-400 text-lg max-w-xl mx-auto">
-          A cinematic Vercel-style landing page with motion, gradients,
-          blur effects, and smooth interactions.
-        </p>
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
 
-        <motion.button
-          whileHover={{ scale: 1.08 }}
-          whileTap={{ scale: 0.95 }}
-          className="mt-10 px-8 py-4 rounded-2xl bg-white text-black font-semibold shadow-2xl"
-        >
-          Enter Experience
-        </motion.button>
-      </motion.div>
-    </main>
-  )
-}
+    .btn {
+      padding: 15px 30px;
+      background: white;
+      color: #0077ff;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .features {
+      padding: 60px 20px;
+      text-align: center;
+      background: white;
+    }
+
+    .feature-box {
+      margin: 20px auto;
+      max-width: 300px;
+    }
+
+    footer {
+      padding: 20px;
+      text-align: center;
+      background: #222;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Build Your Dream Website</h1>
+      <p>Create beautiful landing pages easily.</p>
+      <a href="#" class="btn">Get Started</a>
+    </div>
+  </section>
+
+  <section class="features">
+    <h2>Features</h2>
+
+    <div class="feature-box">
+      <h3>Fast</h3>
+      <p>Lightning-fast performance.</p>
+    </div>
+
+    <div class="feature-box">
+      <h3>Responsive</h3>
+      <p>Works on all devices.</p>
+    </div>
+
+    <div class="feature-box">
+      <h3>Modern</h3>
+      <p>Clean and modern design.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 My Website</p>
+  </footer>
+
+</body>
+</html>
